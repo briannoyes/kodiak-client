@@ -1,0 +1,7 @@
+﻿services:
+  pcrc-poc:
+    image: pcrc-poc
+    build:
+      context: .
+      dockerfile: PCRC-POC/Dockerfile
+

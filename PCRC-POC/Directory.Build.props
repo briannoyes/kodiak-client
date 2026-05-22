@@ -1,0 +1,13 @@
+<Project>
+    <PropertyGroup>
+        <!--
+            We use a custom System.Text.Json CosmosSerializer (see PCRC.Data.Cosmos), so we do not
+            depend on Newtonsoft.Json directly. Microsoft.Azure.Cosmos still ships some
+            Newtonsoft-dependent internals; its .targets file insists on an explicit Newtonsoft
+            reference and this flag tells it not to. The flag has to be set in every project that
+            transitively pulls the SDK, which is why it lives in Directory.Build.props rather than
+            the Data project alone.
+        -->
+        <AzureCosmosDisableNewtonsoftJsonCheck>true</AzureCosmosDisableNewtonsoftJsonCheck>
+    </PropertyGroup>
+</Project>
